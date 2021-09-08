@@ -11,9 +11,6 @@ import java.sql.Statement;
  */
 public class ClasePrueba {
 
-    public static void main(String[] args) {
-        verCliente();
-    }
 
     /**
      * Método prueba para verificar si se puede consultar una tabla de la base
@@ -23,7 +20,7 @@ public class ClasePrueba {
         Conexion mysql = new Conexion();
         Connection conn = mysql.Conectar();
         String cont = "";
-        String sql = "SELECT nombre FROM Tienda.t_clientes;";
+        String sql = "SELECT t_clientes FROM tienda;";
 
         try {
             Statement stmt = conn.createStatement();
