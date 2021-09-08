@@ -2,16 +2,14 @@
 package interfaces;
 
 import java.awt.*;
+import java.awt.geom.*;
 import java.awt.event.*;
+import java.util.*;
 import javax.swing.*;
-
 
 public class MainPanel2 extends JPanel
 {
-    public static void main(String[] args) 
-    {
-        new SnippetFrame(new MainPanel2(), "UAPT -UAEM Functions");
-    }
+    
     
     private JPanel titlePanel = new JPanel();
     private JPanel functionsPanel = new JPanel();
@@ -92,9 +90,20 @@ public class MainPanel2 extends JPanel
             buttons[i].setMaximumSize(GVar.getButtonDimension());
             buttons[i].setMinimumSize(GVar.getButtonDimension());
             toolbar.add(buttons[i]);
+            
         }
         toolbar.addSeparator();  
+        
     } 
+    
+    public void actionPerformed(ActionEvent e) {
+        String command = e.getActionCommand();
+        if ("Subdirección Académica".equals(command)) {
+          //panel.shapeType = panel.RECTANGLE;
+        }
+        
+        
+  }
     
     private void setExitPanel()
     {
@@ -118,4 +127,6 @@ public class MainPanel2 extends JPanel
         setMinimumSize(GVar.getTitlePanelDimension());
         setMaximumSize(GVar.getTitlePanelDimension());
     }
+    
+    
 }

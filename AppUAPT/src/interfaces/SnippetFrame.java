@@ -5,9 +5,7 @@ import javax.swing.*;
 
 public class SnippetFrame extends JFrame {
 
-    public static void main(String[] args) {
-        new SnippetFrame();
-    }
+    
 
     public SnippetFrame(Component component, String title, Dimension dimension) {
         super(title);
