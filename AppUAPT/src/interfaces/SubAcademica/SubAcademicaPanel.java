@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package interfaces;
+package interfaces.SubAcademica;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import logica.Consultas;
 
 /**
  *
@@ -21,8 +22,8 @@ public class SubAcademicaPanel extends javax.swing.JPanel {
         initComponents();
          try {
             // TODO add your handling code here:
-            MainPanel.LlenarTabla_Convenios(Table_Convenios);
-            MainPanel.LlenarTabla_Formatos(Table_Formatos);
+            Consultas.LlenarTabla_Convenios(Table_Convenios);
+            Consultas.LlenarTabla_Formatos(Table_Formatos);
         } catch (Exception ex) {
             Logger.getLogger(SubAcademicaPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -113,7 +114,6 @@ public class SubAcademicaPanel extends javax.swing.JPanel {
         TabedPane_SubAca.getAccessibleContext().setAccessibleName("TabbedPane_SubAcademica");
 
         getAccessibleContext().setAccessibleName("Formatos");
-        getAccessibleContext().setAccessibleDescription("Formatos");
     }// </editor-fold>//GEN-END:initComponents
 
     private void TabedPane_SubAcaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabedPane_SubAcaMouseEntered

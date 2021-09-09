@@ -1,6 +1,8 @@
 //  CAVEES 150721
 package interfaces;
 
+import interfaces.ExtensionVinculacion.ExtVinPanel;
+import interfaces.SubAcademica.SubAcademicaPanel;
 import conexion.Conexion;
 import java.awt.*;
 import java.awt.event.*;
@@ -97,7 +99,7 @@ public class MainPanel extends JPanel {
         JPanel coordLabPanel = new JPanel();
         JPanel posInvPanel = new JPanel();
         JPanel difCultPanel = new JPanel();
-        JPanel extVinPanel = new JPanel();
+        JPanel extVinPanel = new ExtVinPanel();
         setCoordinacionPanel(coordinacionPanel);
         setSubdAcadPanel(subAcadPanel);
         setSubdAdmPanel(subAdmPanel);
@@ -232,87 +234,7 @@ public class MainPanel extends JPanel {
         setMaximumSize(GVar.getTitlePanelDimension());
     }
     
-    //Llenado de tablas
-    public static void LlenarTabla_Convenios(JTable tabla) throws Exception{
-        
-    
-        DefaultTableModel model = new DefaultTableModel();
-        tabla.setModel(model);
-        
-        Statement stm;
-        
-        Conexion mysql = new Conexion();
-        Connection conn = mysql.Conectar();
-        
-        try {
-             stm = conn.createStatement();
-             
-             ResultSet rs = stm.executeQuery("SELECT * FROM Convenios");
-             
-             ResultSetMetaData rsMd = rs.getMetaData();
-             
-             int cantidadColumnas = rsMd.getColumnCount();
-             
-            for (int i = 1; i <= cantidadColumnas; i++) {
-                model.addColumn(rsMd.getColumnLabel(i));
-            }
-              
-            //8.- Creando las filas para el JTable
-            while (rs.next()) {
-                Object[] fila = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    fila[i] = rs.getObject(i + 1);
-                }
-                model.addRow(fila);
-            }
-            //9.- Cierro el ResultSet
-            rs.close();
-             
-        } catch (Exception e) {
-            throw new Exception("Error al llenar tabla: " + e.getMessage());
-        }
-    }
-
-    
-        public static void LlenarTabla_Formatos(JTable tabla) throws Exception{
-        
-    
-        DefaultTableModel model = new DefaultTableModel();
-        tabla.setModel(model);
-        
-        Statement stm;
-        
-        Conexion mysql = new Conexion();
-        Connection conn = mysql.Conectar();
-        
-        try {
-             stm = conn.createStatement();
-             
-             ResultSet rs = stm.executeQuery("SELECT * FROM Formatos");
-             
-             ResultSetMetaData rsMd = rs.getMetaData();
-             
-             int cantidadColumnas = rsMd.getColumnCount();
-             
-            for (int i = 1; i <= cantidadColumnas; i++) {
-                model.addColumn(rsMd.getColumnLabel(i));
-            }
-              
-            //8.- Creando las filas para el JTable
-            while (rs.next()) {
-                Object[] fila = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    fila[i] = rs.getObject(i + 1);
-                }
-                model.addRow(fila);
-            }
-            //9.- Cierro el ResultSet
-            rs.close();
-             
-        } catch (Exception e) {
-            throw new Exception("Error al llenar tabla: " + e.getMessage());
-        }
-    }
+   
 
     
     
