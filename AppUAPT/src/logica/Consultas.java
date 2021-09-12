@@ -32,6 +32,9 @@ public class Consultas {
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
+        
+        System.out.println("Holaaa");
+        
     }
 
 }
