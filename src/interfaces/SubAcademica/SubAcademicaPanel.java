@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package interfaces;
+package interfaces.SubAcademica;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -114,7 +114,6 @@ public class SubAcademicaPanel extends javax.swing.JPanel {
         TabedPane_SubAca.getAccessibleContext().setAccessibleName("TabbedPane_SubAcademica");
 
         getAccessibleContext().setAccessibleName("Formatos");
-        getAccessibleContext().setAccessibleDescription("Formatos");
     }// </editor-fold>//GEN-END:initComponents
 
     private void TabedPane_SubAcaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TabedPane_SubAcaMouseEntered

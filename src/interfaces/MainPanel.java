@@ -1,10 +1,9 @@
 //  CAVEES 150721
 package interfaces;
 
-import conexion.Conexion;
-
-import interfaces.SubdireccionAcademicaa.*;
 import interfaces.ExtensionVinculacion.ExtVinPanel;
+import interfaces.SubAcademica.SubAcademicaPanel;
+import conexion.Conexion;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.Connection;
@@ -17,31 +16,34 @@ import javax.swing.table.DefaultTableModel;
 
 public class MainPanel extends JPanel {
 
+
     // Variables globales
     private JPanel titlePanel = new JPanel();
     private JPanel functionsPanel = new JPanel();
     private JPanel exitPanel = new JPanel();
-
+        
     /**
      * Método principal
      *
      * @param args
      */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         new SnippetFrame(new MainPanel(), "UAPT -UAEM Functions");
+        
     }
 
+    
     /**
      * Constructor
      */
-    public MainPanel() throws Exception {
+    public MainPanel() {
         super(true);
         setMainPanelParameters();
         setFunctionsPanel();
         setTitlePanel();
         setExitPanel();
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="Creación de paneles"> 
     private void setMainPanelParameters() {
         setLayout(new BorderLayout());
@@ -70,7 +72,7 @@ public class MainPanel extends JPanel {
         add(titlePanel, BorderLayout.NORTH);
     }
 
-    private void setFunctionsPanel() throws Exception {
+    private void setFunctionsPanel() {
         functionsPanel.setLayout(new GridLayout(1, 1));
         functionsPanel.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(Color.decode("#E3D7FF"), 10),
@@ -89,7 +91,7 @@ public class MainPanel extends JPanel {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Menús y submenús"> 
-    private void setMenu() throws Exception {
+    private void setMenu() {
         JTabbedPane menuTabbedPane = new JTabbedPane(JTabbedPane.TOP);
         JPanel coordinacionPanel = new JPanel();
         JPanel subAcadPanel = new JPanel();
@@ -102,7 +104,6 @@ public class MainPanel extends JPanel {
         setSubdAcadPanel(subAcadPanel);
         setSubdAdmPanel(subAdmPanel);
         setLaboratoriosPanel(coordLabPanel);
-        setDifCultPanel(difCultPanel);
         menuTabbedPane.addTab("Coordinación General", coordinacionPanel);
         menuTabbedPane.addTab("Subdirección Académica", subAcadPanel);
         menuTabbedPane.addTab("Subdirección Administrativa", subAdmPanel);
@@ -112,30 +113,33 @@ public class MainPanel extends JPanel {
         menuTabbedPane.addTab("Extensión y Vinculación", extVinPanel);
         menuTabbedPane.setSelectedIndex(0);
         functionsPanel.add(menuTabbedPane);
-
+        
+        
+        
     }
+    
+    
 
     private void setCoordinacionPanel(JPanel coordinacionGeneralPanel) {
         JTabbedPane coordinacionTabbedPane = new JTabbedPane(JTabbedPane.TOP);
-        JPanel cordGeneralPanel = new cordGeneral();
-        JPanel secreGeneralPanel = new secreGeneral();
-        coordinacionTabbedPane.addTab("Coordinación", cordGeneralPanel);
-        coordinacionTabbedPane.addTab("Secretaria", secreGeneralPanel);
+        JPanel coordinacionPanel = new JPanel();
+        JPanel secretariaPanel = new JPanel();
+        coordinacionTabbedPane.addTab("Coordinación", coordinacionPanel);
+        coordinacionTabbedPane.addTab("Secretaria", secretariaPanel);
         coordinacionTabbedPane.setSelectedIndex(0);
         coordinacionGeneralPanel.setLayout(new GridLayout(1, 1));
         coordinacionGeneralPanel.add(coordinacionTabbedPane);
-        
     }
 
-    private void setSubdAcadPanel(JPanel subAcadPanel) throws Exception {
+    private void setSubdAcadPanel(JPanel subAcadPanel) {
         JTabbedPane subAcadTabbedPane = new JTabbedPane(JTabbedPane.TOP);
         JPanel academicaPanel = new SubAcademicaPanel();
-        JPanel ingMecPanel = new PanelIME();
-        JPanel ingCompPanel = new PanelICO();
-        JPanel ingSoftPanel = new PanelISOFT();
-        JPanel ingProdIndPanel = new PanelIPI();
-        JPanel ingPlastPanel = new PanelIPLA();
-        JPanel segCiudPanel = new PanelISEGCI();
+        JPanel ingMecPanel = new JPanel();
+        JPanel ingCompPanel = new JPanel();
+        JPanel ingSoftPanel = new JPanel();
+        JPanel ingProdIndPanel = new JPanel();
+        JPanel ingPlastPanel = new JPanel();
+        JPanel segCiudPanel = new JPanel();
         JPanel contEscolarPanel = new JPanel();
         JPanel titulacionPanel = new JPanel();
         JPanel movilidadPanel = new JPanel();
@@ -212,17 +216,6 @@ public class MainPanel extends JPanel {
         subAdmPanel.setLayout(new GridLayout(1, 1));
         subAdmPanel.add(subAdmTabbedPane);
     }
-
-    private void setDifCultPanel(JPanel difCultPanel) {
-        JTabbedPane difusionCulturalTabbedPane = new JTabbedPane(JTabbedPane.LEFT);
-        JPanel avisosPanel = new DifCultAvisosPanel(); //Aquí va el panel
-        JPanel talleresPanel = new JPanel();
-        difusionCulturalTabbedPane.addTab("Avisos", avisosPanel);
-        difusionCulturalTabbedPane.addTab("Talleres", talleresPanel);
-        difusionCulturalTabbedPane.setSelectedIndex(0);
-        difCultPanel.setLayout(new GridLayout(1, 1));
-        difCultPanel.add(difusionCulturalTabbedPane);
-    }
     // </editor-fold>
 
     public Dimension getSize() {
@@ -240,5 +233,9 @@ public class MainPanel extends JPanel {
         setMinimumSize(GVar.getTitlePanelDimension());
         setMaximumSize(GVar.getTitlePanelDimension());
     }
+    
+   
 
+    
+    
 }

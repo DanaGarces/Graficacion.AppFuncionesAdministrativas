@@ -11,9 +11,6 @@ import java.sql.Statement;
  */
 public class ClasePrueba {
 
-    public static void main(String[] args) {
-        verCliente();
-    }
 
     /**
      * Método prueba para verificar si se puede consultar una tabla de la base
@@ -23,15 +20,15 @@ public class ClasePrueba {
         Conexion mysql = new Conexion();
         Connection conn = mysql.Conectar();
         String cont = "";
-        String sql = "SELECT * FROM uapt.avisos;";
+        String sql = "SELECT t_clientes FROM tienda;";
 
         try {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                cont = rs.getString("descripcion");
+                cont = rs.getString("nombre");
             }
-            System.out.println("Avisos: " + cont);
+            System.out.println("Clientes: " + cont);
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
