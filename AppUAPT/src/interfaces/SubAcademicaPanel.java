@@ -7,6 +7,7 @@ package interfaces;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import logica.Consultas;
 
 /**
  *
@@ -21,8 +22,8 @@ public class SubAcademicaPanel extends javax.swing.JPanel {
         initComponents();
          try {
             // TODO add your handling code here:
-            MainPanel.LlenarTabla_Convenios(Table_Convenios);
-            MainPanel.LlenarTabla_Formatos(Table_Formatos);
+            Consultas.LlenarTabla_Convenios(Table_Convenios);
+            Consultas.LlenarTabla_Formatos(Table_Formatos);
         } catch (Exception ex) {
             Logger.getLogger(SubAcademicaPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
