@@ -22,15 +22,15 @@ import javax.swing.table.DefaultTableModel;
  * @author Luigi
  */
 public class Alumnos {
-    //query traer alumnos
+    //query traer alumno
     
     public static void llenarTablaICO(JTable tabla) throws Exception{
         Conexion mysql = new Conexion();
         Connection conn = mysql.Conectar();
         String num_cuenta,name,materno,paterno,cve_mat,matName="";
-        String sql = "select alumnos.num_cuenta,alumnos.nombre,alumnos.ape_paterno,alumnos.ape_materno, materias.cve_mat, materias.nameMateria\n" +
-"from alumnos inner join materias inner join alumno_materia on (alumnos.num_cuenta=alumno_materia.num_cuenta and materias.cve_mat = alumno_materia.cve_mat)\n" +
-"where alumnos.cve_carr=\"ICO-F3\";";
+        String sql = "select alumno.num_cuenta,alumno.nombre,alumno.ape_paterno,alumno.ape_materno, materia.cve_mat, materia.nameMateria\n" +
+"from alumno inner join materia inner join alumno_materia on (alumno.num_cuenta=alumno_materia.num_cuenta and materia.cve_mat = alumno_materia.cve_mat)\n" +
+"where alumno.cve_carr=\"ICO-F3\";";
 
         try {
             Statement stmt = conn.createStatement();
@@ -56,9 +56,9 @@ public class Alumnos {
         try {
              stm = conn.createStatement();
              
-             ResultSet rs = stm.executeQuery("select alumnos.num_cuenta,alumnos.nombre,alumnos.ape_paterno,alumnos.ape_materno, materias.cve_mat, materias.nameMateria\n" +
-"from alumnos inner join materias inner join alumno_materia on (alumnos.num_cuenta=alumno_materia.num_cuenta and materias.cve_mat = alumno_materia.cve_mat)\n" +
-"where alumnos.cve_carr=\"ICO-F3\";");
+             ResultSet rs = stm.executeQuery("select alumno.num_cuenta,alumno.nombre,alumno.ape_paterno,alumno.ape_materno, materia.cve_mat, materia.nameMateria\n" +
+"from alumno inner join materia inner join alumno_materia on (alumno.num_cuenta=alumno_materia.num_cuenta and materia.cve_mat = alumno_materia.cve_mat)\n" +
+"where alumno.cve_carr=\"ICO-F3\";");
              
              ResultSetMetaData rsMd = rs.getMetaData();
              
@@ -87,9 +87,9 @@ public class Alumnos {
         Conexion mysql = new Conexion();
         Connection conn = mysql.Conectar();
         String num_cuenta,name,materno,paterno,cve_mat,matName="";
-        String sql = "select alumnos.num_cuenta,alumnos.nombre,alumnos.ape_paterno,alumnos.ape_materno, materias.cve_mat, materias.nameMateria\n" +
-"from alumnos inner join materias inner join alumno_materia on (alumnos.num_cuenta=alumno_materia.num_cuenta and materias.cve_mat = alumno_materia.cve_mat)\n" +
-"where alumnos.cve_carr=\"IPLA-F3\";";
+        String sql = "select alumno.num_cuenta,alumno.nombre,alumno.ape_paterno,alumno.ape_materno, materia.cve_mat, materia.nameMateria\n" +
+"from alumno inner join materia inner join alumno_materia on (alumno.num_cuenta=alumno_materia.num_cuenta and materia.cve_mat = alumno_materia.cve_mat)\n" +
+"where alumno.cve_carr=\"IPLA-F3\";";
 
         try {
             Statement stmt = conn.createStatement();
@@ -115,9 +115,9 @@ public class Alumnos {
         try {
              stm = conn.createStatement();
              
-             ResultSet rs = stm.executeQuery("select alumnos.num_cuenta,alumnos.nombre,alumnos.ape_paterno,alumnos.ape_materno, materias.cve_mat, materias.nameMateria\n" +
-"from alumnos inner join materias inner join alumno_materia on (alumnos.num_cuenta=alumno_materia.num_cuenta and materias.cve_mat = alumno_materia.cve_mat)\n" +
-"where alumnos.cve_carr=\"IPLA-F3\";");
+             ResultSet rs = stm.executeQuery("select alumno.num_cuenta,alumno.nombre,alumno.ape_paterno,alumno.ape_materno, materia.cve_mat, materia.nameMateria\n" +
+"from alumno inner join materia inner join alumno_materia on (alumno.num_cuenta=alumno_materia.num_cuenta and materia.cve_mat = alumno_materia.cve_mat)\n" +
+"where alumno.cve_carr=\"IPLA-F3\";");
              
              ResultSetMetaData rsMd = rs.getMetaData();
              
@@ -147,9 +147,9 @@ public class Alumnos {
         Conexion mysql = new Conexion();
         Connection conn = mysql.Conectar();
         String num_cuenta,name,materno,paterno,cve_mat,matName="";
-        String sql = "select alumnos.num_cuenta,alumnos.nombre,alumnos.ape_paterno,alumnos.ape_materno, materias.cve_mat, materias.nameMateria\n" +
-"from alumnos inner join materias inner join alumno_materia on (alumnos.num_cuenta=alumno_materia.num_cuenta and materias.cve_mat = alumno_materia.cve_mat)\n" +
-"where alumnos.cve_carr=\"IME-F3\";";
+        String sql = "select alumno.num_cuenta,alumno.nombre,alumno.ape_paterno,alumno.ape_materno, materia.cve_mat, materia.nameMateria\n" +
+"from alumno inner join materia inner join alumno_materia on (alumno.num_cuenta=alumno_materia.num_cuenta and materia.cve_mat = alumno_materia.cve_mat)\n" +
+"where alumno.cve_carr=\"IME-F3\";";
 
         try {
             Statement stmt = conn.createStatement();
@@ -175,9 +175,9 @@ public class Alumnos {
         try {
              stm = conn.createStatement();
              
-             ResultSet rs = stm.executeQuery("select alumnos.num_cuenta,alumnos.nombre,alumnos.ape_paterno,alumnos.ape_materno, materias.cve_mat, materias.nameMateria\n" +
-"from alumnos inner join materias inner join alumno_materia on (alumnos.num_cuenta=alumno_materia.num_cuenta and materias.cve_mat = alumno_materia.cve_mat)\n" +
-"where alumnos.cve_carr=\"IME-F3\";");
+             ResultSet rs = stm.executeQuery("select alumno.num_cuenta,alumno.nombre,alumno.ape_paterno,alumno.ape_materno, materia.cve_mat, materia.nameMateria\n" +
+"from alumno inner join materia inner join alumno_materia on (alumno.num_cuenta=alumno_materia.num_cuenta and materia.cve_mat = alumno_materia.cve_mat)\n" +
+"where alumno.cve_carr=\"IME-F3\";");
              
              ResultSetMetaData rsMd = rs.getMetaData();
              
@@ -207,9 +207,9 @@ public class Alumnos {
         Conexion mysql = new Conexion();
         Connection conn = mysql.Conectar();
         String num_cuenta,name,materno,paterno,cve_mat,matName="";
-        String sql = "select alumnos.num_cuenta,alumnos.nombre,alumnos.ape_paterno,alumnos.ape_materno, materias.cve_mat, materias.nameMateria\n" +
-"from alumnos inner join materias inner join alumno_materia on (alumnos.num_cuenta=alumno_materia.num_cuenta and materias.cve_mat = alumno_materia.cve_mat)\n" +
-"where alumnos.cve_carr=\"IPI-F3\";";
+        String sql = "select alumno.num_cuenta,alumno.nombre,alumno.ape_paterno,alumno.ape_materno, materia.cve_mat, materia.nameMateria\n" +
+"from alumno inner join materia inner join alumno_materia on (alumno.num_cuenta=alumno_materia.num_cuenta and materia.cve_mat = alumno_materia.cve_mat)\n" +
+"where alumno.cve_carr=\"IPI-F3\";";
 
         try {
             Statement stmt = conn.createStatement();
@@ -235,9 +235,9 @@ public class Alumnos {
         try {
              stm = conn.createStatement();
              
-             ResultSet rs = stm.executeQuery("select alumnos.num_cuenta,alumnos.nombre,alumnos.ape_paterno,alumnos.ape_materno, materias.cve_mat, materias.nameMateria\n" +
-"from alumnos inner join materias inner join alumno_materia on (alumnos.num_cuenta=alumno_materia.num_cuenta and materias.cve_mat = alumno_materia.cve_mat)\n" +
-"where alumnos.cve_carr=\"IPI-F3\";");
+             ResultSet rs = stm.executeQuery("select alumno.num_cuenta,alumno.nombre,alumno.ape_paterno,alumno.ape_materno, materia.cve_mat, materia.nameMateria\n" +
+"from alumno inner join materia inner join alumno_materia on (alumno.num_cuenta=alumno_materia.num_cuenta and materia.cve_mat = alumno_materia.cve_mat)\n" +
+"where alumno.cve_carr=\"IPI-F3\";");
              
              ResultSetMetaData rsMd = rs.getMetaData();
              
@@ -267,9 +267,9 @@ public class Alumnos {
         Conexion mysql = new Conexion();
         Connection conn = mysql.Conectar();
         String num_cuenta,name,materno,paterno,cve_mat,matName="";
-        String sql = "select alumnos.num_cuenta,alumnos.nombre,alumnos.ape_paterno,alumnos.ape_materno, materias.cve_mat, materias.nameMateria\n" +
-"from alumnos inner join materias inner join alumno_materia on (alumnos.num_cuenta=alumno_materia.num_cuenta and materias.cve_mat = alumno_materia.cve_mat)\n" +
-"where alumnos.cve_carr=\"ISEGCI-F3\";";
+        String sql = "select alumno.num_cuenta,alumno.nombre,alumno.ape_paterno,alumno.ape_materno, materia.cve_mat, materia.nameMateria\n" +
+"from alumno inner join materia inner join alumno_materia on (alumno.num_cuenta=alumno_materia.num_cuenta and materia.cve_mat = alumno_materia.cve_mat)\n" +
+"where alumno.cve_carr=\"ISEGCI-F3\";";
 
         try {
             Statement stmt = conn.createStatement();
@@ -295,9 +295,9 @@ public class Alumnos {
         try {
              stm = conn.createStatement();
              
-             ResultSet rs = stm.executeQuery("select alumnos.num_cuenta,alumnos.nombre,alumnos.ape_paterno,alumnos.ape_materno, materias.cve_mat, materias.nameMateria\n" +
-"from alumnos inner join materias inner join alumno_materia on (alumnos.num_cuenta=alumno_materia.num_cuenta and materias.cve_mat = alumno_materia.cve_mat)\n" +
-"where alumnos.cve_carr=\"ISEGCI-F3\";");
+             ResultSet rs = stm.executeQuery("select alumno.num_cuenta,alumno.nombre,alumno.ape_paterno,alumno.ape_materno, materia.cve_mat, materia.nameMateria\n" +
+"from alumno inner join materia inner join alumno_materia on (alumno.num_cuenta=alumno_materia.num_cuenta and materia.cve_mat = alumno_materia.cve_mat)\n" +
+"where alumno.cve_carr=\"ISEGCI-F3\";");
              
              ResultSetMetaData rsMd = rs.getMetaData();
              
@@ -327,9 +327,9 @@ public class Alumnos {
         Conexion mysql = new Conexion();
         Connection conn = mysql.Conectar();
         String num_cuenta,name,materno,paterno,cve_mat,matName="";
-        String sql = "select alumnos.num_cuenta,alumnos.nombre,alumnos.ape_paterno,alumnos.ape_materno, materias.cve_mat, materias.nameMateria\n" +
-"from alumnos inner join materias inner join alumno_materia on (alumnos.num_cuenta=alumno_materia.num_cuenta and materias.cve_mat = alumno_materia.cve_mat)\n" +
-"where alumnos.cve_carr=\"ISOFT-F3\";";
+        String sql = "select alumno.num_cuenta,alumno.nombre,alumno.ape_paterno,alumno.ape_materno, materia.cve_mat, materia.nameMateria\n" +
+"from alumno inner join materia inner join alumno_materia on (alumno.num_cuenta=alumno_materia.num_cuenta and materia.cve_mat = alumno_materia.cve_mat)\n" +
+"where alumno.cve_carr=\"ISOFT-F3\";";
 
         try {
             Statement stmt = conn.createStatement();
@@ -355,9 +355,9 @@ public class Alumnos {
         try {
              stm = conn.createStatement();
              
-             ResultSet rs = stm.executeQuery("select alumnos.num_cuenta,alumnos.nombre,alumnos.ape_paterno,alumnos.ape_materno, materias.cve_mat, materias.nameMateria\n" +
-"from alumnos inner join materias inner join alumno_materia on (alumnos.num_cuenta=alumno_materia.num_cuenta and materias.cve_mat = alumno_materia.cve_mat)\n" +
-"where alumnos.cve_carr=\"ISOFT-F3\";");
+             ResultSet rs = stm.executeQuery("select alumno.num_cuenta,alumno.nombre,alumno.ape_paterno,alumno.ape_materno, materia.cve_mat, materia.nameMateria\n" +
+"from alumno inner join materia inner join alumno_materia on (alumno.num_cuenta=alumno_materia.num_cuenta and materia.cve_mat = alumno_materia.cve_mat)\n" +
+"where alumno.cve_carr=\"ISOFT-F3\";");
              
              ResultSetMetaData rsMd = rs.getMetaData();
              
