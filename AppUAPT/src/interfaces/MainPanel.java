@@ -26,7 +26,6 @@ public class MainPanel extends JPanel {
      */
     public static void main(String[] args) {
         new SnippetFrame(new MainPanel(), "UAPT -UAEM Functions");
-
     }
 
     /**
@@ -115,13 +114,14 @@ public class MainPanel extends JPanel {
 
     private void setCoordinacionPanel(JPanel coordinacionGeneralPanel) {
         JTabbedPane coordinacionTabbedPane = new JTabbedPane(JTabbedPane.TOP);
-        JPanel coordinacionPanel = new JPanel();
-        JPanel secretariaPanel = new JPanel();
-        coordinacionTabbedPane.addTab("Coordinación", coordinacionPanel);
-        coordinacionTabbedPane.addTab("Secretaria", secretariaPanel);
+        JPanel cordGeneralPanel = new cordGeneral();
+        JPanel secreGeneralPanel = new secreGeneral();
+        coordinacionTabbedPane.addTab("Coordinación", cordGeneralPanel);
+        coordinacionTabbedPane.addTab("Secretaria", secreGeneralPanel);
         coordinacionTabbedPane.setSelectedIndex(0);
         coordinacionGeneralPanel.setLayout(new GridLayout(1, 1));
         coordinacionGeneralPanel.add(coordinacionTabbedPane);
+        
     }
 
     private void setSubdAcadPanel(JPanel subAcadPanel) {

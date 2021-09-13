@@ -107,6 +107,8 @@ public class Consultas {
             throw new Exception("Error al llenar tabla: " + e.getMessage());
         }
     }
+  
+  
 
     /**
      * Consulta la tabla de avisos en la base de datos
@@ -114,6 +116,7 @@ public class Consultas {
      * @param tabla
      * @throws Exception
      */
+
     public static void LlenarTablaAvisos(JTable tabla) throws Exception {
 
         DefaultTableModel model = new DefaultTableModel() {
