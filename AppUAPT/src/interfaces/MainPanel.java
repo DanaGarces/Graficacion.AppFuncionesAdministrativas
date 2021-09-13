@@ -2,6 +2,7 @@
 package interfaces;
 
 import conexion.Conexion;
+import interfaces.SubdireccionAcademicaa.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.Connection;
@@ -25,7 +26,7 @@ public class MainPanel extends JPanel {
      *
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         new SnippetFrame(new MainPanel(), "UAPT -UAEM Functions");
         
     }
@@ -34,7 +35,7 @@ public class MainPanel extends JPanel {
     /**
      * Constructor
      */
-    public MainPanel() {
+    public MainPanel() throws Exception {
         super(true);
         setMainPanelParameters();
         setFunctionsPanel();
@@ -70,7 +71,7 @@ public class MainPanel extends JPanel {
         add(titlePanel, BorderLayout.NORTH);
     }
 
-    private void setFunctionsPanel() {
+    private void setFunctionsPanel() throws Exception {
         functionsPanel.setLayout(new GridLayout(1, 1));
         functionsPanel.setBorder(BorderFactory.createCompoundBorder(
                 BorderFactory.createLineBorder(Color.decode("#E3D7FF"), 10),
@@ -89,7 +90,7 @@ public class MainPanel extends JPanel {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Menús y submenús"> 
-    private void setMenu() {
+    private void setMenu() throws Exception {
         JTabbedPane menuTabbedPane = new JTabbedPane(JTabbedPane.TOP);
         JPanel coordinacionPanel = new JPanel();
         JPanel subAcadPanel = new JPanel();
@@ -129,15 +130,15 @@ public class MainPanel extends JPanel {
         coordinacionGeneralPanel.add(coordinacionTabbedPane);
     }
 
-    private void setSubdAcadPanel(JPanel subAcadPanel) {
+    private void setSubdAcadPanel(JPanel subAcadPanel) throws Exception {
         JTabbedPane subAcadTabbedPane = new JTabbedPane(JTabbedPane.TOP);
         JPanel academicaPanel = new SubAcademicaPanel();
-        JPanel ingMecPanel = new JPanel();
-        JPanel ingCompPanel = new JPanel();
-        JPanel ingSoftPanel = new JPanel();
-        JPanel ingProdIndPanel = new JPanel();
-        JPanel ingPlastPanel = new JPanel();
-        JPanel segCiudPanel = new JPanel();
+        JPanel ingMecPanel = new PanelIME();
+        JPanel ingCompPanel = new PanelICO();
+        JPanel ingSoftPanel = new PanelISOFT();
+        JPanel ingProdIndPanel = new PanelIPI();
+        JPanel ingPlastPanel = new PanelIPLA();
+        JPanel segCiudPanel = new PanelISEGCI();
         JPanel contEscolarPanel = new JPanel();
         JPanel titulacionPanel = new JPanel();
         JPanel movilidadPanel = new JPanel();
