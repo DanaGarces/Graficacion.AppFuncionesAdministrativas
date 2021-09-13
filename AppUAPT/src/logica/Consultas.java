@@ -196,6 +196,9 @@ public class Consultas {
         } catch (Exception e) {
             throw new Exception("Error al llenar tabla: " + e.getMessage());
         }
+        
+        System.out.println("Holaaa");
+        
     }
 
     /**
