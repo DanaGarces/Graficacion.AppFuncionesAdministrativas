@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 public class Conexion {
 
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "paoyara3";
+    private static final String PASSWORD = "123456789";
     private static final String CONN_STRING = "jdbc:mysql://localhost:3306/uapt?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
     /**
