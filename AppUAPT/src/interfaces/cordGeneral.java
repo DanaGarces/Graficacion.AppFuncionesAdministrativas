@@ -63,7 +63,6 @@ public class cordGeneral extends javax.swing.JPanel {
         consulta.setSize(603,432);
         this.add(consulta);
         consulta.show();
-        
     }//GEN-LAST:event_ConsultaBtnActionPerformed
 
     private void ModificaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificaBtnActionPerformed
