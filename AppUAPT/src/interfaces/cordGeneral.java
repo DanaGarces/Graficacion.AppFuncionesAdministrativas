@@ -27,9 +27,13 @@ public class cordGeneral extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblHead = new javax.swing.JLabel();
         ConsultaBtn = new javax.swing.JButton();
         ModificaBtn = new javax.swing.JButton();
-        lblHead = new javax.swing.JLabel();
+
+        setLayout(null);
+        add(lblHead);
+        lblHead.setBounds(12, 13, 1271, 410);
 
         ConsultaBtn.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         ConsultaBtn.setText("Consultar Datos de Contacto");
@@ -38,6 +42,8 @@ public class cordGeneral extends javax.swing.JPanel {
                 ConsultaBtnActionPerformed(evt);
             }
         });
+        add(ConsultaBtn);
+        ConsultaBtn.setBounds(220, 440, 315, 90);
 
         ModificaBtn.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         ModificaBtn.setText("Modificar Datos de Contacto");
@@ -46,39 +52,15 @@ public class cordGeneral extends javax.swing.JPanel {
                 ModificaBtnActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(211, 211, 211)
-                        .addComponent(ConsultaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(104, 104, 104)
-                        .addComponent(ModificaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(lblHead, javax.swing.GroupLayout.PREFERRED_SIZE, 1271, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(153, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblHead, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ModificaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ConsultaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33))
-        );
+        add(ModificaBtn);
+        ModificaBtn.setBounds(640, 440, 315, 90);
     }// </editor-fold>//GEN-END:initComponents
 
        
     private void ConsultaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultaBtnActionPerformed
         consultaPanel consulta = new consultaPanel();
         consulta.setLocation(1230,100);
+        consulta.setSize(603,432);
         this.add(consulta);
         consulta.show();
         
@@ -87,6 +69,7 @@ public class cordGeneral extends javax.swing.JPanel {
     private void ModificaBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificaBtnActionPerformed
         modificaPanel modifica = new modificaPanel();
         modifica.setLocation(1230,100);
+        modifica.setSize(603,432);
         this.add(modifica);
         modifica.show();
     }//GEN-LAST:event_ModificaBtnActionPerformed

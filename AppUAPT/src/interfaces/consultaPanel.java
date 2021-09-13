@@ -143,108 +143,69 @@ public class consultaPanel extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
         setOpaque(true);
+        getContentPane().setLayout(null);
 
         direccion.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         direccion.setText("Dirección:");
+        getContentPane().add(direccion);
+        direccion.setBounds(12, 142, 71, 20);
 
         cpostal.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         cpostal.setText("Código Postal:");
+        getContentPane().add(cpostal);
+        cpostal.setBounds(90, 199, 103, 20);
 
         Estado.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         Estado.setText("Estado:");
+        getContentPane().add(Estado);
+        Estado.setBounds(90, 243, 53, 20);
 
         lblCpostal.setBackground(new java.awt.Color(255, 255, 255));
         lblCpostal.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         lblCpostal.setText(".");
         lblCpostal.setOpaque(true);
+        getContentPane().add(lblCpostal);
+        lblCpostal.setBounds(208, 188, 339, 31);
 
         lblEstado.setBackground(new java.awt.Color(255, 255, 255));
         lblEstado.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         lblEstado.setText(".");
         lblEstado.setOpaque(true);
+        getContentPane().add(lblEstado);
+        lblEstado.setBounds(208, 237, 339, 33);
 
         telefono.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         telefono.setText("Teléfono:");
+        getContentPane().add(telefono);
+        telefono.setBounds(90, 299, 68, 20);
 
         lblTelefono.setBackground(new java.awt.Color(255, 255, 255));
         lblTelefono.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         lblTelefono.setText(".");
         lblTelefono.setOpaque(true);
+        getContentPane().add(lblTelefono);
+        lblTelefono.setBounds(208, 288, 339, 33);
 
         email.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         email.setText("Email:");
+        getContentPane().add(email);
+        email.setBounds(90, 349, 45, 20);
 
         lblemail.setBackground(new java.awt.Color(255, 255, 255));
         lblemail.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         lblemail.setText(".");
         lblemail.setOpaque(true);
+        getContentPane().add(lblemail);
+        lblemail.setBounds(208, 336, 339, 33);
+        getContentPane().add(lblImg2);
+        lblImg2.setBounds(12, 13, 555, 97);
 
         lblDireccion.setBackground(new java.awt.Color(255, 255, 255));
         lblDireccion.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         lblDireccion.setText(".");
         lblDireccion.setOpaque(true);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(direccion)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(telefono)
-                                            .addComponent(email)
-                                            .addComponent(Estado))
-                                        .addGap(35, 35, 35))
-                                    .addComponent(cpostal, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(lblTelefono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lblEstado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lblCpostal, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
-                                    .addComponent(lblemail, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(28, 28, 28))
-                            .addComponent(lblDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addComponent(lblImg2, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblImg2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
-                    .addComponent(direccion))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(cpostal)
-                    .addComponent(lblCpostal, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Estado))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(telefono)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(email))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(lblTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15)
-                        .addComponent(lblemail, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(23, 23, 23))
-        );
+        getContentPane().add(lblDireccion);
+        lblDireccion.setBounds(90, 123, 485, 58);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

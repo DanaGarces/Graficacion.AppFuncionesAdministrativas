@@ -71,31 +71,54 @@ public class modificaPanel extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
+        getContentPane().setLayout(null);
 
         direccion2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         direccion2.setText("Dirección:");
+        getContentPane().add(direccion2);
+        direccion2.setBounds(12, 123, 71, 20);
 
         cpostal2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         cpostal2.setText("Código Postal:");
+        getContentPane().add(cpostal2);
+        cpostal2.setBounds(30, 169, 103, 20);
 
         estado2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         estado2.setText("Estado:");
+        getContentPane().add(estado2);
+        estado2.setBounds(30, 221, 53, 20);
 
         telefono2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         telefono2.setText("Teléfono:");
+        getContentPane().add(telefono2);
+        telefono2.setBounds(30, 265, 68, 20);
 
         email2.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         email2.setText("Email:");
+        getContentPane().add(email2);
+        email2.setBounds(30, 308, 45, 20);
+        getContentPane().add(lblImg3);
+        lblImg3.setBounds(12, 13, 563, 97);
 
         txtDireccion.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        getContentPane().add(txtDireccion);
+        txtDireccion.setBounds(101, 123, 474, 39);
 
         txtPostal.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        getContentPane().add(txtPostal);
+        txtPostal.setBounds(151, 169, 342, 34);
 
         txtEstado.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        getContentPane().add(txtEstado);
+        txtEstado.setBounds(151, 216, 342, 31);
 
         txtTelefono.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        getContentPane().add(txtTelefono);
+        txtTelefono.setBounds(151, 260, 342, 30);
 
         txtEmail.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        getContentPane().add(txtEmail);
+        txtEmail.setBounds(151, 303, 342, 31);
 
         btnOk.setText("Guardar cambios");
         btnOk.addActionListener(new java.awt.event.ActionListener() {
@@ -103,73 +126,8 @@ public class modificaPanel extends javax.swing.JInternalFrame {
                 btnOkActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(email2)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(telefono2)
-                                    .addGap(35, 35, 35))
-                                .addComponent(cpostal2, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addComponent(estado2))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtPostal)
-                            .addComponent(txtEstado)
-                            .addComponent(txtTelefono)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblImg3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(direccion2)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtDireccion)))))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(198, 198, 198)
-                .addComponent(btnOk, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(237, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblImg3, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(direccion2)
-                    .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cpostal2)
-                    .addComponent(txtPostal, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(estado2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtTelefono, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(telefono2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(email2))
-                .addGap(18, 18, 18)
-                .addComponent(btnOk, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        getContentPane().add(btnOk);
+        btnOk.setBounds(198, 352, 152, 33);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
