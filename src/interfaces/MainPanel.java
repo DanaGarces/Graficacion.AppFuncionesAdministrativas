@@ -1,8 +1,9 @@
 //  CAVEES 150721
 package interfaces;
 
-import conexion.Conexion;
 import interfaces.ExtensionVinculacion.ExtVinPanel;
+import interfaces.SubAcademica.SubAcademicaPanel;
+import conexion.Conexion;
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.Connection;
@@ -15,11 +16,12 @@ import javax.swing.table.DefaultTableModel;
 
 public class MainPanel extends JPanel {
 
+
     // Variables globales
     private JPanel titlePanel = new JPanel();
     private JPanel functionsPanel = new JPanel();
     private JPanel exitPanel = new JPanel();
-
+        
     /**
      * Método principal
      *
@@ -27,8 +29,10 @@ public class MainPanel extends JPanel {
      */
     public static void main(String[] args) {
         new SnippetFrame(new MainPanel(), "UAPT -UAEM Functions");
+        
     }
 
+    
     /**
      * Constructor
      */
@@ -39,7 +43,7 @@ public class MainPanel extends JPanel {
         setTitlePanel();
         setExitPanel();
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="Creación de paneles"> 
     private void setMainPanelParameters() {
         setLayout(new BorderLayout());
@@ -100,7 +104,6 @@ public class MainPanel extends JPanel {
         setSubdAcadPanel(subAcadPanel);
         setSubdAdmPanel(subAdmPanel);
         setLaboratoriosPanel(coordLabPanel);
-        setDifCultPanel(difCultPanel);
         menuTabbedPane.addTab("Coordinación General", coordinacionPanel);
         menuTabbedPane.addTab("Subdirección Académica", subAcadPanel);
         menuTabbedPane.addTab("Subdirección Administrativa", subAdmPanel);
@@ -110,19 +113,22 @@ public class MainPanel extends JPanel {
         menuTabbedPane.addTab("Extensión y Vinculación", extVinPanel);
         menuTabbedPane.setSelectedIndex(0);
         functionsPanel.add(menuTabbedPane);
-
+        
+        
+        
     }
+    
+    
 
     private void setCoordinacionPanel(JPanel coordinacionGeneralPanel) {
         JTabbedPane coordinacionTabbedPane = new JTabbedPane(JTabbedPane.TOP);
-        JPanel cordGeneralPanel = new cordGeneral();
-        JPanel secreGeneralPanel = new secreGeneral();
-        coordinacionTabbedPane.addTab("Coordinación", cordGeneralPanel);
-        coordinacionTabbedPane.addTab("Secretaria", secreGeneralPanel);
+        JPanel coordinacionPanel = new JPanel();
+        JPanel secretariaPanel = new JPanel();
+        coordinacionTabbedPane.addTab("Coordinación", coordinacionPanel);
+        coordinacionTabbedPane.addTab("Secretaria", secretariaPanel);
         coordinacionTabbedPane.setSelectedIndex(0);
         coordinacionGeneralPanel.setLayout(new GridLayout(1, 1));
         coordinacionGeneralPanel.add(coordinacionTabbedPane);
-        
     }
 
     private void setSubdAcadPanel(JPanel subAcadPanel) {
@@ -210,17 +216,6 @@ public class MainPanel extends JPanel {
         subAdmPanel.setLayout(new GridLayout(1, 1));
         subAdmPanel.add(subAdmTabbedPane);
     }
-
-    private void setDifCultPanel(JPanel difCultPanel) {
-        JTabbedPane difusionCulturalTabbedPane = new JTabbedPane(JTabbedPane.LEFT);
-        JPanel avisosPanel = new DifCultAvisosPanel(); //Aquí va el panel
-        JPanel talleresPanel = new JPanel();
-        difusionCulturalTabbedPane.addTab("Avisos", avisosPanel);
-        difusionCulturalTabbedPane.addTab("Talleres", talleresPanel);
-        difusionCulturalTabbedPane.setSelectedIndex(0);
-        difCultPanel.setLayout(new GridLayout(1, 1));
-        difCultPanel.add(difusionCulturalTabbedPane);
-    }
     // </editor-fold>
 
     public Dimension getSize() {
@@ -238,5 +233,9 @@ public class MainPanel extends JPanel {
         setMinimumSize(GVar.getTitlePanelDimension());
         setMaximumSize(GVar.getTitlePanelDimension());
     }
+    
+   
 
+    
+    
 }

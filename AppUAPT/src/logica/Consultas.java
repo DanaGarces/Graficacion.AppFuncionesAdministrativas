@@ -107,8 +107,45 @@ public class Consultas {
             throw new Exception("Error al llenar tabla: " + e.getMessage());
         }
     }
-  
-  
+
+    public static void LlenarTabla_ExtVin(JTable tabla) throws Exception {
+
+        DefaultTableModel model = new DefaultTableModel();
+        tabla.setModel(model);
+
+        Statement stm;
+
+        Conexion mysql = new Conexion();
+        Connection conn = mysql.Conectar();
+
+        try {
+            stm = conn.createStatement();
+
+            ResultSet rs = stm.executeQuery("SELECT * FROM Convocatoria");
+
+            ResultSetMetaData rsMd = rs.getMetaData();
+
+            int cantidadColumnas = rsMd.getColumnCount();
+
+            for (int i = 1; i <= cantidadColumnas; i++) {
+                model.addColumn(rsMd.getColumnLabel(i));
+            }
+
+            //8.- Creando las filas para el JTable
+            while (rs.next()) {
+                Object[] fila = new Object[cantidadColumnas];
+                for (int i = 0; i < cantidadColumnas; i++) {
+                    fila[i] = rs.getObject(i + 1);
+                }
+                model.addRow(fila);
+            }
+            //9.- Cierro el ResultSet
+            rs.close();
+
+        } catch (Exception e) {
+            throw new Exception("Error al llenar tabla: " + e.getMessage());
+        }
+    }
 
     /**
      * Consulta la tabla de avisos en la base de datos
@@ -116,7 +153,6 @@ public class Consultas {
      * @param tabla
      * @throws Exception
      */
-
     public static void LlenarTablaAvisos(JTable tabla) throws Exception {
 
         DefaultTableModel model = new DefaultTableModel() {
