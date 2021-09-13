@@ -14,12 +14,11 @@ import javax.swing.table.DefaultTableModel;
 
 public class MainPanel extends JPanel {
 
-
     // Variables globales
     private JPanel titlePanel = new JPanel();
     private JPanel functionsPanel = new JPanel();
     private JPanel exitPanel = new JPanel();
-        
+
     /**
      * Método principal
      *
@@ -27,10 +26,9 @@ public class MainPanel extends JPanel {
      */
     public static void main(String[] args) {
         new SnippetFrame(new MainPanel(), "UAPT -UAEM Functions");
-        
+
     }
 
-    
     /**
      * Constructor
      */
@@ -41,7 +39,7 @@ public class MainPanel extends JPanel {
         setTitlePanel();
         setExitPanel();
     }
-    
+
     // <editor-fold defaultstate="collapsed" desc="Creación de paneles"> 
     private void setMainPanelParameters() {
         setLayout(new BorderLayout());
@@ -102,6 +100,7 @@ public class MainPanel extends JPanel {
         setSubdAcadPanel(subAcadPanel);
         setSubdAdmPanel(subAdmPanel);
         setLaboratoriosPanel(coordLabPanel);
+        setDifCultPanel(difCultPanel);
         menuTabbedPane.addTab("Coordinación General", coordinacionPanel);
         menuTabbedPane.addTab("Subdirección Académica", subAcadPanel);
         menuTabbedPane.addTab("Subdirección Administrativa", subAdmPanel);
@@ -111,12 +110,8 @@ public class MainPanel extends JPanel {
         menuTabbedPane.addTab("Extensión y Vinculación", extVinPanel);
         menuTabbedPane.setSelectedIndex(0);
         functionsPanel.add(menuTabbedPane);
-        
-        
-        
+
     }
-    
-    
 
     private void setCoordinacionPanel(JPanel coordinacionGeneralPanel) {
         JTabbedPane coordinacionTabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -214,6 +209,17 @@ public class MainPanel extends JPanel {
         subAdmPanel.setLayout(new GridLayout(1, 1));
         subAdmPanel.add(subAdmTabbedPane);
     }
+
+    private void setDifCultPanel(JPanel difCultPanel) {
+        JTabbedPane difusionCulturalTabbedPane = new JTabbedPane(JTabbedPane.LEFT);
+        JPanel avisosPanel = new DifCultAvisosPanel(); //Aquí va el panel
+        JPanel talleresPanel = new JPanel();
+        difusionCulturalTabbedPane.addTab("Avisos", avisosPanel);
+        difusionCulturalTabbedPane.addTab("Talleres", talleresPanel);
+        difusionCulturalTabbedPane.setSelectedIndex(0);
+        difCultPanel.setLayout(new GridLayout(1, 1));
+        difCultPanel.add(difusionCulturalTabbedPane);
+    }
     // </editor-fold>
 
     public Dimension getSize() {
@@ -231,89 +237,5 @@ public class MainPanel extends JPanel {
         setMinimumSize(GVar.getTitlePanelDimension());
         setMaximumSize(GVar.getTitlePanelDimension());
     }
-    
-    //Llenado de tablas
-    public static void LlenarTabla_Convenios(JTable tabla) throws Exception{
-        
-    
-        DefaultTableModel model = new DefaultTableModel();
-        tabla.setModel(model);
-        
-        Statement stm;
-        
-        Conexion mysql = new Conexion();
-        Connection conn = mysql.Conectar();
-        
-        try {
-             stm = conn.createStatement();
-             
-             ResultSet rs = stm.executeQuery("SELECT * FROM Convenios");
-             
-             ResultSetMetaData rsMd = rs.getMetaData();
-             
-             int cantidadColumnas = rsMd.getColumnCount();
-             
-            for (int i = 1; i <= cantidadColumnas; i++) {
-                model.addColumn(rsMd.getColumnLabel(i));
-            }
-              
-            //8.- Creando las filas para el JTable
-            while (rs.next()) {
-                Object[] fila = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    fila[i] = rs.getObject(i + 1);
-                }
-                model.addRow(fila);
-            }
-            //9.- Cierro el ResultSet
-            rs.close();
-             
-        } catch (Exception e) {
-            throw new Exception("Error al llenar tabla: " + e.getMessage());
-        }
-    }
 
-    
-        public static void LlenarTabla_Formatos(JTable tabla) throws Exception{
-        
-    
-        DefaultTableModel model = new DefaultTableModel();
-        tabla.setModel(model);
-        
-        Statement stm;
-        
-        Conexion mysql = new Conexion();
-        Connection conn = mysql.Conectar();
-        
-        try {
-             stm = conn.createStatement();
-             
-             ResultSet rs = stm.executeQuery("SELECT * FROM Formatos");
-             
-             ResultSetMetaData rsMd = rs.getMetaData();
-             
-             int cantidadColumnas = rsMd.getColumnCount();
-             
-            for (int i = 1; i <= cantidadColumnas; i++) {
-                model.addColumn(rsMd.getColumnLabel(i));
-            }
-              
-            //8.- Creando las filas para el JTable
-            while (rs.next()) {
-                Object[] fila = new Object[cantidadColumnas];
-                for (int i = 0; i < cantidadColumnas; i++) {
-                    fila[i] = rs.getObject(i + 1);
-                }
-                model.addRow(fila);
-            }
-            //9.- Cierro el ResultSet
-            rs.close();
-             
-        } catch (Exception e) {
-            throw new Exception("Error al llenar tabla: " + e.getMessage());
-        }
-    }
-
-    
-    
 }
