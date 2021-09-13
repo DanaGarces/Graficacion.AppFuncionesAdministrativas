@@ -16,17 +16,22 @@ public class Consultas {
      * Método prueba para verificar si se puede consultar una tabla de la base
      * de datos.
      */
+    
+    // public static void main (String[] args){
+       //verCliente();
+    //}
     public static void verCliente() {
         Conexion mysql = new Conexion();
         Connection conn = mysql.Conectar();
         String cont = "";
-        String sql = "SELECT nombre FROM Tienda.t_clientes;";
-
+        //String sql = "SELECT nombre FROM Tienda.t_clientes;";
+        String sql = "SELECT direccion FROM contacto;";
+        
         try {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
-                cont = rs.getString("nombre");
+                cont = rs.getString("direccion");
             }
             System.out.println("Clientes: " + cont);
         } catch (SQLException ex) {

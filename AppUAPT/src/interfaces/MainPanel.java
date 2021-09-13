@@ -13,8 +13,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 public class MainPanel extends JPanel {
-
-
+    
     // Variables globales
     private JPanel titlePanel = new JPanel();
     private JPanel functionsPanel = new JPanel();
@@ -26,11 +25,9 @@ public class MainPanel extends JPanel {
      * @param args
      */
     public static void main(String[] args) {
-        new SnippetFrame(new MainPanel(), "UAPT -UAEM Functions");
-        
+        new SnippetFrame(new MainPanel(), "UAPT -UAEM Functions"); 
     }
 
-    
     /**
      * Constructor
      */
@@ -110,23 +107,19 @@ public class MainPanel extends JPanel {
         menuTabbedPane.addTab("Difusión Cultural", difCultPanel);
         menuTabbedPane.addTab("Extensión y Vinculación", extVinPanel);
         menuTabbedPane.setSelectedIndex(0);
-        functionsPanel.add(menuTabbedPane);
-        
-        
-        
+        functionsPanel.add(menuTabbedPane);    
     }
     
-    
-
     private void setCoordinacionPanel(JPanel coordinacionGeneralPanel) {
         JTabbedPane coordinacionTabbedPane = new JTabbedPane(JTabbedPane.TOP);
-        JPanel coordinacionPanel = new JPanel();
-        JPanel secretariaPanel = new JPanel();
-        coordinacionTabbedPane.addTab("Coordinación", coordinacionPanel);
-        coordinacionTabbedPane.addTab("Secretaria", secretariaPanel);
+        JPanel cordGeneralPanel = new cordGeneral();
+        JPanel secreGeneralPanel = new secreGeneral();
+        coordinacionTabbedPane.addTab("Coordinación", cordGeneralPanel);
+        coordinacionTabbedPane.addTab("Secretaria", secreGeneralPanel);
         coordinacionTabbedPane.setSelectedIndex(0);
         coordinacionGeneralPanel.setLayout(new GridLayout(1, 1));
         coordinacionGeneralPanel.add(coordinacionTabbedPane);
+        
     }
 
     private void setSubdAcadPanel(JPanel subAcadPanel) {
